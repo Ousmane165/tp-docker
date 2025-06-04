@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tpdb
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8085:80
+    environment:
+      PMA_HOST: db
